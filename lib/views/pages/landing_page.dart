@@ -7,7 +7,7 @@ import '../../constants/images_path.dart';
 import '../models_ui/landing_item_view.dart';
 
 class LandingPage extends StatefulWidget {
-  LandingPage({super.key});
+  const LandingPage({super.key});
 
   @override
   State<LandingPage> createState() => _LandingPageState();
@@ -95,7 +95,7 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
               onPressed: () {
-                //Navigator.pushNamed(context, '/login');
+                Navigator.pushNamed(context, AppRoutes.LOGINPAGE);
               },
               child: Text(
                 "Log In",

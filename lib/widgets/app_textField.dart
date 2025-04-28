@@ -12,6 +12,8 @@ class AppTextField extends StatelessWidget {
   final Color? focusedBorderColor;
   final TextInputType keyboardType;
   final Color? textColor;
+  final double? fieldRaduis;
+  final FocusNode? focusNode;
   final Function(String)? onChanged;
   const AppTextField({
     super.key,
@@ -26,6 +28,8 @@ class AppTextField extends StatelessWidget {
     this.focusedBorderColor,
     this.suffix,
     this.textColor,
+    this.fieldRaduis,
+    this.focusNode,
     required this.keyboardType,
   });
 
@@ -34,6 +38,7 @@ class AppTextField extends StatelessWidget {
     return TextField(
       textAlign: TextAlign.start,
       controller: controller,
+      focusNode: focusNode,
       keyboardType: keyboardType ?? TextInputType.text,
       obscureText: obscureText ?? false,
       onChanged: onChanged,
@@ -46,6 +51,7 @@ class AppTextField extends StatelessWidget {
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         suffix: suffix,
+
         labelStyle: TextStyle(
           color: Colors.blue,
         ),
@@ -58,7 +64,7 @@ class AppTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: focusedBorderColor ?? Colors.blue.shade900, width: 1.5),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(fieldRaduis ?? 10),
         ),
       ),
     );
