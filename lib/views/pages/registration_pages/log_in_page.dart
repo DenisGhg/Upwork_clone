@@ -158,7 +158,7 @@ class _LogInPageState extends State<LogInPage> {
                       setState(() {
                         _mailError = false;
                       });
-                      Navigator.pushNamed(context, AppRoutes.SIGNUPPAGE);
+                      Navigator.pushNamed(context, AppRoutes.PASSWORDPAGE);
                     }
                   },
                   height: screenHeight * 0.05,
